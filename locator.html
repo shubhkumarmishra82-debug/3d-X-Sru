@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Map — SR University</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body data-page="locator">
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero" style="padding:56px 0 32px;">
+  <div class="blueprint-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">CAMPUS MAP</div>
+    <h1>Real Campus Map</h1>
+    <p class="hero-lede">Drag to pan, scroll to zoom, and tap any pin to see what it is. Pin positions are approximate estimates for orientation — not a surveyed site plan.</p>
+  </div>
+</section>
+
+<section style="padding-top:0; padding-bottom:0;">
+  <div class="wrap">
+    <div class="tour-cta">
+      <p>To get our full campus tour, click here</p>
+      <button class="btn-tour-anim" id="btnCampusVideo" type="button">
+        <span>▶ Our Campus</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding-top:0; padding-bottom:0;">
+  <div class="wrap">
+    <div class="nav-card" id="navCard">
+      <div class="nav-card-head">
+        <div>
+          <div class="eyebrow" style="margin-bottom:6px;">LIVE NAVIGATE</div>
+          <h3 style="margin:0;">Where do you want to go?</h3>
+        </div>
+        <button class="btn btn-ghost" id="btnLocate" type="button">📍 Use my location</button>
+      </div>
+      <div class="nav-search-row">
+        <input type="text" id="navInput" list="navPlaces" placeholder="Type a place — e.g. mess, library, boys hostel…" autocomplete="off">
+        <datalist id="navPlaces"></datalist>
+        <button class="btn btn-primary" id="btnNavGo" type="button">Get directions</button>
+      </div>
+      <div id="navResult" class="nav-result"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:24px;">
+  <div class="wrap">
+    <div class="locator-layout">
+      <div id="campus-map-wrap">
+        <div id="campusMap"></div>
+        <div id="campusMapFallback" hidden>
+          <div class="fallback-note">
+            Live map tiles aren't reachable on this network — showing the illustrated layout instead.
+            <button id="btnMapRetry" type="button">Try live map</button>
+          </div>
+          <svg id="fallbackSvg" viewBox="0 0 640 460" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+        <div class="locator-controls">
+          <button class="icon-btn" id="btnMapLocate" title="Show my location on the map">📍</button>
+        </div>
+        <div class="locator-hint">drag to pan · scroll to zoom · tap a pin</div>
+      </div>
+      <div class="locator-panel">
+        <div id="locatorPanel"><p class="empty">Tap any pin — or pick one from the list below — to see what it is.</p></div>
+        <ul class="locator-list" id="locatorList"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div class="video-modal" id="videoModal" hidden>
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+  <div class="video-modal-box">
+    <button class="video-modal-close" id="videoModalClose" type="button" aria-label="Close video">✕</button>
+    <video id="campusVideo" controls playsinline preload="none"></video>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/icons.js"></script>
+<script src="assets/nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="assets/panel.js"></script>
+<script src="assets/campusmap.js"></script>
+<script src="assets/navigate.js"></script>
+<script src="assets/campusvideo.js"></script>
+</body>
+</html>

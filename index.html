@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SR University — Campus Companion</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/entrance.css">
+<link rel="preload" as="image" href="assets/images/campus-clean.webp" fetchpriority="high">
+</head>
+<body data-page="home">
+
+<header class="site-header" id="site-header"></header>
+
+<main>
+<section class="campus-entrance" id="campus-entrance" aria-label="Explore the SR University campus entrance">
+  <div class="entrance-frame">
+    <img class="entrance-photo" src="assets/images/campus-clean.webp" width="1599" height="984" alt="SR University building beyond a landscaped courtyard and stone walkway" fetchpriority="high">
+    <div class="entrance-canvas" aria-hidden="true"></div>
+    <div class="entrance-shade" aria-hidden="true"></div>
+    <div class="entrance-topline"><span>SRU × SARATHI</span><span>WARANGAL, TELANGANA</span></div>
+    <div class="entrance-copy">
+      <p class="entrance-kicker">A PLACE TO BELONG. A WORLD TO EXPLORE.</p>
+      <h1>Your campus.<br><em>A new perspective.</em></h1>
+      <p>Step into SR University. Find your people,<br class="desktop-break"> your place, and your way forward.</p>
+      <a class="entrance-enter" href="#campus-content">Explore campus <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="entrance-arrival" aria-hidden="true">
+      <span>YOU’RE IN GOOD COMPANY</span>
+      <p>Welcome<br><em>inside.</em></p>
+    </div>
+    <div class="entrance-bottom">
+      <span class="entrance-location">SR UNIVERSITY <span>·</span> EST. 2020</span>
+      <span class="entrance-scroll"><span class="scroll-line" aria-hidden="true"></span> SCROLL TO STEP INSIDE</span>
+      <a class="entrance-skip" href="#campus-content">Skip intro <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="entrance-flash" aria-hidden="true"></div>
+    <div class="entrance-exit" aria-hidden="true"></div>
+    <div class="entrance-progress" aria-hidden="true"><span></span></div>
+  </div>
+</section>
+
+<section class="hero campus-content" id="campus-content" tabindex="-1">
+  <div class="blueprint-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">WELCOME TO YOUR CAMPUS COMPANION</div>
+    <h2>Your campus, mapped, toured,<br>and answered — all in one place.</h2>
+    <p class="hero-lede">A student-built companion for SR University, Ananthasagar, Warangal. Explore the blocks, find your way with the live campus map, or ask Sarathi a question.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="locator.html">Open Campus Map ↗</a>
+      <a class="btn btn-ghost" href="tour.html">Start Campus Tour</a>
+      <a class="btn btn-ghost" href="chatbot.html">Ask the Bot</a>
+    </div>
+    <div class="hero-tags">
+      <span class="coord-tag">◎ 17.98° N, 79.58° E</span>
+      <span class="coord-tag">150-ACRE CAMPUS</span>
+      <span class="coord-tag">NAAC 'A' GRADE</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="stat-strip" id="statStrip"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-num">01 — SCHOOLS</div>
+        <h2>Six schools, one campus</h2>
+      </div>
+      <p style="max-width:360px; margin:0;">Every program on campus sits under one of these six schools. Tap into the chatbot for a deeper dive on any of them.</p>
+    </div>
+    <div class="grid grid-3" id="schoolsGrid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-num">02 — GET AROUND</div>
+        <h2>Three ways to explore</h2>
+      </div>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="badge"></div>
+        <h3>Campus Tour</h3>
+        <p>A guided, block-by-block walkthrough of every major building — academics, hostels, sports and more.</p>
+        <a class="btn btn-ghost" href="tour.html">View the tour →</a>
+      </div>
+      <div class="card">
+        <div class="badge"></div>
+        <h3>Campus Map</h3>
+        <p>A real, live map of campus with every building pinned — tap any pin to see what it is, right down to the facilities inside.</p>
+        <a class="btn btn-ghost" href="locator.html">Open the map →</a>
+      </div>
+      <div class="card">
+        <div class="badge"></div>
+        <h3>Campus Helper Bot</h3>
+        <p>A fast, rule-based chatbot — no external AI API — that answers common questions about SRU instantly.</p>
+        <a class="btn btn-ghost" href="chatbot.html">Start chatting →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-num">03 — FACILITIES</div>
+        <h2>What's on campus</h2>
+      </div>
+    </div>
+    <div class="grid grid-3" id="facilitiesGrid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-num">04 — PLACEMENTS</div>
+        <h2>Where SRU graduates land</h2>
+      </div>
+    </div>
+    <div class="card">
+      <p style="color:var(--ink); font-size:1.05rem;" id="placementSummary"></p>
+      <div class="chip-row" id="recruiterChips"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script type="module" src="assets/entrance.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/icons.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+  // stat strip
+  const statStrip = document.getElementById('statStrip');
+  statStrip.innerHTML = SRU_DATA.stats.map(s => `
+    <div class="stat-cell">
+      <div class="stat-value">${s.value}<span style="font-size:.9rem;">${s.suffix}</span></div>
+      <div class="stat-label">${s.label}</div>
+    </div>`).join('');
+
+  // schools
+  const schoolsGrid = document.getElementById('schoolsGrid');
+  schoolsGrid.innerHTML = SRU_DATA.schools.map(s => `
+    <div class="card">
+      <h3>${s.name}</h3>
+      <div class="chip-row">${s.programs.slice(0,4).map(p => `<span class="chip">${p}</span>`).join('')}</div>
+    </div>`).join('');
+
+  // facilities
+  const facilitiesGrid = document.getElementById('facilitiesGrid');
+  facilitiesGrid.innerHTML = SRU_DATA.facilities.map(f => `
+    <div class="card">
+      <div class="badge">${icon(f.icon)}</div>
+      <h3>${f.name}</h3>
+      <p>${f.detail}</p>
+    </div>`).join('');
+
+  // placements
+  document.getElementById('placementSummary').textContent = SRU_DATA.placements.summary;
+  document.getElementById('recruiterChips').innerHTML =
+    SRU_DATA.placements.recruiters.map(r => `<span class="chip">${r}</span>`).join('');
+
+</script>
+<script>
+  // replace the three placeholder badges with real icons after icons.js loads
+  (function(){
+    const badges = document.querySelectorAll('section .grid-3 .card .badge');
+    const iconNames = ['map','cube','chat'];
+    let i = 0;
+    badges.forEach(b => {
+      if (b.innerHTML.trim() === '') { b.innerHTML = icon(iconNames[i] || 'cube'); i++; }
+    });
+  })();
+</script>
+</body>
+</html>

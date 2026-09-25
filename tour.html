@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus Tour — SR University</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="tour">
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero" style="padding:56px 0 40px;">
+  <div class="blueprint-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">GUIDED WALKTHROUGH</div>
+    <h1>Campus Tour</h1>
+    <p class="hero-lede">Every major block on campus, in one scroll. Filter by zone, or open the Campus Map to see them all pinned in one place.</p>
+    <div class="hero-actions" id="zoneFilters"></div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="tour-cta">
+      <p>To get our full campus tour, click here</p>
+      <button class="btn-tour-anim" id="btnCampusVideo" type="button">
+        <span>▶ Our Campus</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div id="tourList"></div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div class="video-modal" id="videoModal" hidden>
+  <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+  <div class="video-modal-box">
+    <button class="video-modal-close" id="videoModalClose" type="button" aria-label="Close video">✕</button>
+    <video id="campusVideo" controls playsinline preload="none"></video>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/icons.js"></script>
+<script src="assets/nav.js"></script>
+<script src="assets/campusvideo.js"></script>
+<script>
+  const list = document.getElementById('tourList');
+  const filters = document.getElementById('zoneFilters');
+  const zones = ['All', ...new Set(SRU_DATA.buildings.map(b => b.zone))];
+  let active = 'All';
+
+  function render(){
+    const items = SRU_DATA.buildings.filter(b => active === 'All' || b.zone === active);
+    list.innerHTML = items.map((b, i) => `
+      <div class="tour-item">
+        <div class="tour-index mono">${String(i+1).padStart(2,'0')}</div>
+        <div>
+          <span class="tour-zone">${b.zone}</span>
+          <div class="badge" style="margin-bottom:10px;">${icon(b.icon)}</div>
+          <h3>${b.name}</h3>
+          <p>${b.blurb}</p>
+          <div class="chip-row">${b.facilities.map(f => `<span class="chip">${f}</span>`).join('')}</div>
+        </div>
+      </div>`).join('') || '<p>No buildings in this zone yet.</p>';
+  }
+
+  filters.innerHTML = zones.map(z =>
+    `<button class="btn ${z==='All' ? 'btn-primary' : 'btn-ghost'}" data-zone="${z}" style="font-family:var(--font-mono); font-size:.78rem;">${z}</button>`
+  ).join('');
+
+  filters.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-zone]');
+    if (!btn) return;
+    active = btn.dataset.zone;
+    filters.querySelectorAll('button').forEach(b => {
+      b.classList.toggle('btn-primary', b === btn);
+      b.classList.toggle('btn-ghost', b !== btn);
+    });
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+SRU — COMPLETE VERCEL DEPLOYMENT
+
+WHY THE OLD DEPLOYMENT RETURNED 404
+The 3d-X-Sru repository contained an update-only package. There was no
+index.html at its root, and the original pages, CSS and data were missing.
+This package merges the original website and the 3D update.
+
+FASTEST: DEPLOY DIRECTLY FROM YOUR COMPUTER
+1. Extract this ZIP. Open a terminal inside SRU-Vercel-Ready.
+   This folder must directly contain index.html, package.json and vercel.json.
+2. With Node.js installed, run:
+   npx vercel --prod
+3. Sign in if asked. Select your Vercel account/team, link to your existing
+   3d-x-sru project, and use ./ as the code directory.
+   If your existing project's Root Directory is updated-files or another
+   subfolder, clear it in Vercel Project Settings before deploying.
+   The included configuration controls the build and output directory.
+
+GITHUB AUTOMATIC DEPLOYMENTS
+Clone your existing 3d-X-Sru repository locally. Copy the CONTENTS of
+SRU-Vercel-Ready into the repository root, merging assets and replacing files.
+Do not copy the enclosing SRU-Vercel-Ready folder into the repository.
+Do not upload the ZIP itself. The video exceeds GitHub's browser upload limit;
+use Git or GitHub Desktop to commit the complete folder.
+Run from your clone:
+   git add .
+   git commit -m "Restore complete website and configure Vercel build"
+   git push origin main
+In Vercel: select main, Root Directory ./ (repository root), Framework Other.
+Redeploy the newest commit if deployment does not start automatically.
+
+CONFIGURATION (ALREADY IN vercel.json)
+Build command: node scripts/build.mjs
+Output directory: dist
+Install command: empty (no dependencies needed to build)
+Environment variables: none
+The build copies all four HTML pages and every asset to dist.
+Clean URLs: /tour, /locator, /chatbot; existing .html links also work on Vercel.
+
+LOCAL CHECK
+   npm run build
+   python -m http.server 3000 --directory dist
+Open http://localhost:3000. For this basic local server use the .html page links.
+The campus map retains its original external Leaflet/map-tile dependencies.
+
+This package has not been deployed to your Vercel account by the assistant.

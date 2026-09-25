@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask SRU Bot — SR University</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="chatbot">
+
+<header class="site-header" id="site-header"></header>
+
+<section class="hero" style="padding:56px 0 32px;">
+  <div class="blueprint-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">RULE-BASED · NO AI API</div>
+    <h1>Ask the SRU Campus Bot</h1>
+    <p class="hero-lede">A fast, offline-friendly helper that matches your question against a built-in knowledge base — nothing is sent to any external AI service.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div style="max-width:640px; margin:0 auto;">
+      <div class="chat-shell">
+        <div class="chat-header">
+          <span class="dot"></span>
+          <div>
+            <b>SRU Campus Helper</b>
+            <small>keyword-matching bot · always online</small>
+          </div>
+        </div>
+        <div class="chat-log" id="chatLog"></div>
+        <div class="quick-replies" id="quickReplies"></div>
+        <form class="chat-input-row" id="chatForm">
+          <input id="chatInput" type="text" placeholder="Ask about admissions, hostel, fees, placements…" autocomplete="off">
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+      <p class="divider-note" style="margin-top:16px;">Tip: try "what courses are offered", "hostel facilities", or "contact number".</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/icons.js"></script>
+<script src="assets/nav.js"></script>
+<script src="assets/chatbot.js"></script>
+</body>
+</html>
